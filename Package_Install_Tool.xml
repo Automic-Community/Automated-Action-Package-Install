@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<uc-export clientvers="11.2.1+build.412">
+<JOBP AllowExternal="1" name="FE.IMPORT_PACKAGES.EACH_CLIENT">
+<XHEADER state="1">
+<Title>Import Packages to Each ARA Client</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<Active>1</Active>
+<OH_SubType>FE</OH_SubType>
+<CustomAttributes KeyListID="0" dataRequestID="0"/>
+</XHEADER>
+<SYNCREF state="1">
+<Syncs/>
+</SYNCREF>
+<ATTR_JOBP state="1">
+<Queue>CLIENT_QUEUE</Queue>
+<ChildQueue/>
+<StartType/>
+<ExtRepDef>1</ExtRepDef>
+<ExtRepAll>0</ExtRepAll>
+<ExtRepNone>0</ExtRepNone>
+<IntAccount/>
+<AutoDeactNo>0</AutoDeactNo>
+<AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
+<AutoDeactErrorFree>1</AutoDeactErrorFree>
+<DeactWhen/>
+<AutoDeactAlways>0</AutoDeactAlways>
+<DeactDelay>0</DeactDelay>
+<ActAtRun>0</ActAtRun>
+<UC4Priority>0</UC4Priority>
+<MaxParallel2>0</MaxParallel2>
+<ReuseHG>1</ReuseHG>
+<MpElse1>0</MpElse1>
+<MpElse2>0</MpElse2>
+<TZ/>
+<RWhen/>
+<RExecute/>
+<JPA_SubType>FE</JPA_SubType>
+</ATTR_JOBP>
+<JOBP_FE state="1">
+<JobpStruct mode="design">
+<task Alias="" BranchType="1" Col="1" Lnr="1" OType="&lt;FE&gt;" Object="FE" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="0" WElseS="1" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="1" Lnr="1" PreLnr="2" When="" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree/>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+<ForEach publish_name="client#" source_name="VARA.ARA_CLIENTS" source_prompt="0" source_vara="1" source_vara_column="1"/>
+</task>
+<task Alias="" BranchType="1" Col="2" Lnr="2" OType="JOBP" Object="FE.INSTALL_PACKAGE" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="1" Lnr="1" PreLnr="1" When="ANY_OK" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="1" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
+<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
+</dyntree>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<task Alias="" BranchType="2" Col="1" Lnr="3" OType="&lt;END&gt;" Object="END" ParentAlias="" ParentObject="" Row="2" Text2="">
+<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="0" WElseS="1" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="2" Lnr="1" PreLnr="1" When="" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree/>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<OPTIONS/>
+</JobpStruct>
+</JOBP_FE>
+<RUNTIME state="1">
+<MaxRetCode>0</MaxRetCode>
+<MrcExecute/>
+<MrcElseE>0</MrcElseE>
+<FcstStatus>0| |</FcstStatus>
+<Ert>3183</Ert>
+<ErtMethodDef>1</ErtMethodDef>
+<ErtMethodFix>0</ErtMethodFix>
+<ErtFix>0</ErtFix>
+<ErtDynMethod>2|Average</ErtDynMethod>
+<ErtMethodDyn>0</ErtMethodDyn>
+<ErtCnt>0</ErtCnt>
+<ErtCorr>0</ErtCorr>
+<ErtIgn>0</ErtIgn>
+<ErtIgnFlg>0</ErtIgnFlg>
+<ErtMinCnt>0</ErtMinCnt>
+<MrtMethodNone>1</MrtMethodNone>
+<MrtMethodFix>0</MrtMethodFix>
+<MrtFix>0</MrtFix>
+<MrtMethodErt>0</MrtMethodErt>
+<MrtErt>0</MrtErt>
+<MrtMethodDate>0</MrtMethodDate>
+<MrtDays>0</MrtDays>
+<MrtTime>00:00</MrtTime>
+<MrtTZ/>
+<SrtMethodNone>1</SrtMethodNone>
+<SrtMethodFix>0</SrtMethodFix>
+<SrtFix>0</SrtFix>
+<SrtMethodErt>0</SrtMethodErt>
+<SrtErt>0</SrtErt>
+<MrtCancel>0</MrtCancel>
+<MrtExecute>0</MrtExecute>
+<MrtExecuteObj/>
+</RUNTIME>
+<DYNVALUES state="1">
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
+<VALUE state="1">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+</dyntree>
+</DYNVALUES>
+<DEPLOYMENT state="1">
+<DeploymentFlag>0</DeploymentFlag>
+<WFTypeA>1</WFTypeA>
+<WFTypeC>0</WFTypeC>
+<AppName/>
+<WFName/>
+<ComponentName/>
+</DEPLOYMENT>
+<ROLLBACK state="1">
+<RollbackFlag>0</RollbackFlag>
+<CBackupObj/>
+<CRollbackObj/>
+<FBackupPath/>
+<FDeleteBefore>0</FDeleteBefore>
+<FInclSubDirs>0</FInclSubDirs>
+</ROLLBACK>
+<SCRIPT mode="1" state="1">
+<MSCRI/>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBP>
+<JOBP AllowExternal="1" name="FE.INSTALL_PACKAGE">
+<XHEADER state="1">
+<Title>Install Package</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<Active>1</Active>
+<OH_SubType>FE</OH_SubType>
+<CustomAttributes KeyListID="0" dataRequestID="0"/>
+</XHEADER>
+<SYNCREF state="1">
+<Syncs/>
+</SYNCREF>
+<ATTR_JOBP state="1">
+<Queue>CLIENT_QUEUE</Queue>
+<ChildQueue/>
+<StartType/>
+<ExtRepDef>1</ExtRepDef>
+<ExtRepAll>0</ExtRepAll>
+<ExtRepNone>0</ExtRepNone>
+<IntAccount/>
+<AutoDeactNo>0</AutoDeactNo>
+<AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
+<AutoDeactErrorFree>1</AutoDeactErrorFree>
+<DeactWhen/>
+<AutoDeactAlways>0</AutoDeactAlways>
+<DeactDelay>0</DeactDelay>
+<ActAtRun>1</ActAtRun>
+<UC4Priority>0</UC4Priority>
+<MaxParallel2>0</MaxParallel2>
+<ReuseHG>1</ReuseHG>
+<MpElse1>0</MpElse1>
+<MpElse2>0</MpElse2>
+<TZ/>
+<RWhen/>
+<RExecute/>
+<JPA_SubType>FE</JPA_SubType>
+</ATTR_JOBP>
+<JOBP_FE state="1">
+<JobpStruct mode="design">
+<task Alias="" BranchType="1" Col="1" Lnr="1" OType="&lt;FE&gt;" Object="FE" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="0" WElseS="1" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="1" Lnr="1" PreLnr="2" When="" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree/>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+<ForEach publish_name="pkg_zip#" source_name="VARA.PACKAGE_LIST" source_prompt="0" source_vara="1" source_vara_column="1"/>
+</task>
+<task Alias="" BranchType="1" Col="2" Lnr="2" OType="JOBS" Object="INSTALL_PACKAGES" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="1" Lnr="1" PreLnr="1" When="ANY_OK" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="1" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
+<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
+</dyntree>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<task Alias="" BranchType="2" Col="1" Lnr="3" OType="&lt;END&gt;" Object="END" ParentAlias="" ParentObject="" Row="2" Text2="">
+<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="0" WElseS="1" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="2" Lnr="1" PreLnr="1" When="" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree/>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<OPTIONS/>
+</JobpStruct>
+</JOBP_FE>
+<RUNTIME state="1">
+<MaxRetCode>0</MaxRetCode>
+<MrcExecute/>
+<MrcElseE>0</MrcElseE>
+<FcstStatus>0| |</FcstStatus>
+<Ert>501</Ert>
+<ErtMethodDef>1</ErtMethodDef>
+<ErtMethodFix>0</ErtMethodFix>
+<ErtFix>0</ErtFix>
+<ErtDynMethod>2|Average</ErtDynMethod>
+<ErtMethodDyn>0</ErtMethodDyn>
+<ErtCnt>0</ErtCnt>
+<ErtCorr>0</ErtCorr>
+<ErtIgn>0</ErtIgn>
+<ErtIgnFlg>0</ErtIgnFlg>
+<ErtMinCnt>0</ErtMinCnt>
+<MrtMethodNone>1</MrtMethodNone>
+<MrtMethodFix>0</MrtMethodFix>
+<MrtFix>0</MrtFix>
+<MrtMethodErt>0</MrtMethodErt>
+<MrtErt>0</MrtErt>
+<MrtMethodDate>0</MrtMethodDate>
+<MrtDays>0</MrtDays>
+<MrtTime>00:00</MrtTime>
+<MrtTZ/>
+<SrtMethodNone>1</SrtMethodNone>
+<SrtMethodFix>0</SrtMethodFix>
+<SrtFix>0</SrtFix>
+<SrtMethodErt>0</SrtMethodErt>
+<SrtErt>0</SrtErt>
+<MrtCancel>0</MrtCancel>
+<MrtExecute>0</MrtExecute>
+<MrtExecuteObj/>
+</RUNTIME>
+<DYNVALUES state="1">
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
+<VALUE state="1">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+</dyntree>
+</DYNVALUES>
+<DEPLOYMENT state="1">
+<DeploymentFlag>0</DeploymentFlag>
+<WFTypeA>1</WFTypeA>
+<WFTypeC>0</WFTypeC>
+<AppName/>
+<WFName/>
+<ComponentName/>
+</DEPLOYMENT>
+<ROLLBACK state="1">
+<RollbackFlag>0</RollbackFlag>
+<CBackupObj/>
+<CRollbackObj/>
+<FBackupPath/>
+<FDeleteBefore>0</FDeleteBefore>
+<FInclSubDirs>0</FInclSubDirs>
+</ROLLBACK>
+<SCRIPT mode="1" state="1">
+<MSCRI/>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBP>
+<JOBS_WINDOWS AttrType="WINDOWS" name="INSTALL_PACKAGES">
+<XHEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<Active>1</Active>
+<OH_SubType/>
+<CustomAttributes KeyListID="0" dataRequestID="0"/>
+</XHEADER>
+<OUTPUTREG state="1">
+<FileReg/>
+</OUTPUTREG>
+<SYNCREF state="1">
+<Syncs/>
+</SYNCREF>
+<ATTR_JOBS state="1">
+<Queue>PREVIEW_QUEUE</Queue>
+<StartType/>
+<HostDst>|WINDOWS_POWERSHELL|HOST</HostDst>
+<HostATTR_Type>WINDOWS</HostATTR_Type>
+<CodeName/>
+<Login>LOGIN.ALL</Login>
+<IntAccount/>
+<ExtRepDef>1</ExtRepDef>
+<ExtRepAll>0</ExtRepAll>
+<ExtRepNone>0</ExtRepNone>
+<AutoDeactNo>0</AutoDeactNo>
+<AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
+<AutoDeactErrorFree>0</AutoDeactErrorFree>
+<DeactWhen/>
+<DeactDelay>0</DeactDelay>
+<AutoDeactAlways>1</AutoDeactAlways>
+<AttDialog>0</AttDialog>
+<ActAtRun>1</ActAtRun>
+<Consumption>0</Consumption>
+<UC4Priority>0</UC4Priority>
+<MaxParallel2>0</MaxParallel2>
+<MpElse1>1</MpElse1>
+<MpElse2>0</MpElse2>
+<TZ/>
+</ATTR_JOBS>
+<ATTR_WINDOWS state="1">
+<OutputDb>1</OutputDb>
+<OutputDbErr>0</OutputDbErr>
+<OutputFile>0</OutputFile>
+<IsGenerated>0</IsGenerated>
+<BAT>1</BAT>
+<COM>0</COM>
+<WinBatch>0</WinBatch>
+<Standard>1</Standard>
+<Minimized>0</Minimized>
+<Maximized>0</Maximized>
+<JObjDefault>1</JObjDefault>
+<JObjYes>0</JObjYes>
+<JObjNo>0</JObjNo>
+<WorkingDirectory>d:\automic\apm\bin</WorkingDirectory>
+<Command/>
+<LogOn>0</LogOn>
+<ShowJob>0</ShowJob>
+</ATTR_WINDOWS>
+<RUNTIME state="1">
+<MaxRetCode>0</MaxRetCode>
+<MrcExecute/>
+<MrcElseE>0</MrcElseE>
+<FcstStatus>0| |</FcstStatus>
+<Ert>96</Ert>
+<ErtMethodDef>1</ErtMethodDef>
+<ErtMethodFix>0</ErtMethodFix>
+<ErtFix>0</ErtFix>
+<ErtDynMethod>2|Average</ErtDynMethod>
+<ErtMethodDyn>0</ErtMethodDyn>
+<ErtCnt>0</ErtCnt>
+<ErtCorr>0</ErtCorr>
+<ErtIgn>0</ErtIgn>
+<ErtIgnFlg>0</ErtIgnFlg>
+<ErtMinCnt>0</ErtMinCnt>
+<MrtMethodNone>1</MrtMethodNone>
+<MrtMethodFix>0</MrtMethodFix>
+<MrtFix>0</MrtFix>
+<MrtMethodErt>0</MrtMethodErt>
+<MrtErt>0</MrtErt>
+<MrtMethodDate>0</MrtMethodDate>
+<MrtDays>0</MrtDays>
+<MrtTime>00:00</MrtTime>
+<MrtTZ/>
+<SrtMethodNone>1</SrtMethodNone>
+<SrtMethodFix>0</SrtMethodFix>
+<SrtFix>0</SrtFix>
+<SrtMethodErt>0</SrtMethodErt>
+<SrtErt>0</SrtErt>
+<MrtCancel>0</MrtCancel>
+<MrtExecute>0</MrtExecute>
+<MrtExecuteObj/>
+</RUNTIME>
+<DYNVALUES state="1">
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
+<VALUE state="1">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+</dyntree>
+</DYNVALUES>
+<ROLLBACK state="1">
+<RollbackFlag>0</RollbackFlag>
+<CBackupObj/>
+<CRollbackObj/>
+<FBackupPath/>
+<FDeleteBefore>0</FDeleteBefore>
+<FInclSubDirs>0</FInclSubDirs>
+</ROLLBACK>
+<PRE_SCRIPT mode="1" replacementmode="1" state="1">
+<PSCRI/>
+</PRE_SCRIPT>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[! insert these lines in your script to determine if an error occurred
+d:\automic\apm\bin\apm install --from-file D:\automic\apm\Packages\&pkg_zip# -c &client# -S AUTOMIC -u ARASERVICE/AUTOMIC -pw araservice -y
+@set retcode=%errorlevel%
+@if NOT %ERRORLEVEL% == 0 goto :retcode
+]]></MSCRI>
+</SCRIPT>
+<OUTPUTSCAN state="1">
+<Inherit>N</Inherit>
+<filterobjects/>
+<HostFsc/>
+<LoginFsc/>
+</OUTPUTSCAN>
+<POST_SCRIPT mode="1" replacementmode="1" state="1">
+<OSCRI/>
+</POST_SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBS_WINDOWS>
+<VARA OVD_VRName="FREI" data_type="SQLI" name="VARA.ARA_CLIENTS" replacementmode="2">
+<HEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>SQLI</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>SQL - internal</lblSource>
+<source>SQLI</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+</ATTR_VARA>
+<VARA state="1">
+<SQLI internal="YES">
+<command.sql>select oh_name from oh where oh_otype='CLNT'and OH_Title like 'ARA%' and oh_name &gt; '0500'</command.sql>
+<command.ora/>
+<command.db2/>
+<BindParams>
+<row Lnr="OVB_Lnr" Value="OVB_Value" id="OVB_OH_Idnr"/>
+</BindParams>
+<resultformat/>
+<infobar/>
+</SQLI>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="FILELIST" name="VARA.PACKAGE_LIST" replacementmode="2">
+<HEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>FILELIST</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Filelist</lblSource>
+<source>FILELIST</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+</ATTR_VARA>
+<VARA state="1">
+<FILELIST>
+<directory>D:\automic\apm\packages\*</directory>
+<HostDst>WINDOWS_POWERSHELL</HostDst>
+<preferTaskHost>0</preferTaskHost>
+<Login>LOGIN.ALL</Login>
+<preferTaskLogin>0</preferTaskLogin>
+</FILELIST>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+</uc-export>
